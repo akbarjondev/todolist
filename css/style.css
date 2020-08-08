@@ -1,0 +1,161 @@
+/*fonts*/
+@font-face {
+	font-display: swap;
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: 400;
+	src: url("../fonts/rubik-v9-latin_cyrillic-regular.woff2") format("woff2"),
+	url("../fonts/rubik-v9-latin_cyrillic-regular.woff") format("woff");
+}
+@font-face {
+	font-display: swap;
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: 500;
+	src: url("../fonts/rubik-v9-latin_cyrillic-500.woff2") format("woff2"),
+	url("../fonts/rubik-v9-latin_cyrillic-500.woff") format("woff");
+}
+@font-face {
+	font-family: 'Rubik';
+	font-style: italic;
+	font-weight: 500;
+	src: url('../fonts/rubik-v9-latin-500italic.woff2') format('woff2'),
+	url('../fonts/rubik-v9-latin-500italic.woff') format('woff');
+}
+@font-face {
+	font-display: swap;
+	font-family: "Rubik";
+	font-style: normal;
+	font-weight: 700;
+	src: url("../fonts/rubik-v9-latin_cyrillic-700.woff2") format("woff2"),
+	url("../fonts/rubik-v9-latin_cyrillic-700.woff") format("woff");
+}
+
+/*general styles*/
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Rubik", "Arial", sans-serif;
+	box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+/*header*/
+.header {
+	padding: 15px 0;
+	color: #ffffff;
+	background-color: #ff9000;
+}
+.container {
+	max-width: 1260px;
+	margin: 0 auto;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.input-wrapper {
+	display: flex;
+	align-items: center;
+	background-color: #ffa633;
+	border-radius: 3px;
+	overflow: auto;
+}
+.input-img {
+	width: 20px;
+	height: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.task-input {
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	font-family: "Rubik", "Arial", sans-serif;
+	color: #ffffff;
+	border: none;
+	background-color: #ffa633;
+	transition: background-color 0.3s ease,
+							color 0.3s ease;
+}
+	.task-input:hover,
+	.task-input:focus {
+		color: #202020;
+		background-color: #ffffff;
+		outline: none;
+	}
+	.task-input:hover .input-wrapper {
+		border: 1px solid #ffffff;
+	}
+	.task-input::before {
+		content: "";
+		display: block;
+		width: 20px;
+		height: 20px;
+		background-color: #ccc;
+	}
+.main {
+	padding-top: 40px;
+}
+.all-tasks {
+	color: #333333;
+}
+.tasks-heading {
+	margin: 0;
+	margin-bottom: 20px;
+}
+.tasks-list {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.tasks-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 15px;
+	padding-top: 15px;
+	border-top: 1px solid #cccccc;
+}
+.done-button {
+	display: block;
+	width: 25px;
+	height: 25px;
+	margin-left: 5px;
+	border-radius: 50%;
+	border: 1px solid #202020;
+	background: none;
+	background-image: url("../img/check-black.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: contain;
+	background-size: contain;
+	cursor: pointer;
+}
+	.done-button:focus,
+	.done-button:hover {
+		background-image: url("../img/check-white.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		-webkit-background-size: contain;
+		background-size: contain;
+		border-color: #ff9000;
+		background-color: #ff9000;
+		outline: none;
+	}
+	.done-button:active {
+		box-shadow: 0 0 0 2px #ff9000;
+	}
+.button-img {
+	display: block;
+	padding: 0;
+}
+.task-text {
+	width: 95%;
+	margin: 0;
+}

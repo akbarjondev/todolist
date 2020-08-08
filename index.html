@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ToDo List</title>
+
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+			<div class="input-wrapper">
+				<img class="input-img" width="16" height="16" src="img/plus-white.png" alt="Add">
+				<input
+					type="text"
+					id="jsTask"
+					class="task-input"
+					placeholder="Add task"
+					autocomplete="off"
+					spellcheck="false"
+				>
+			</div><!-- End of input-wrapper -->
+		</div><!-- End of container -->
+	</header><!-- End of header -->
+	<main class="main">
+		<div class="container">
+			<section class="all-tasks">
+				<h3 class="tasks-heading">All Tasks</h3>
+				<ul id="jsTasks" class="tasks-list"></ul>
+			</section>
+		</div>
+	</main>
+
+	<script src="js/script.js"></script>
+</body>
+</html>
