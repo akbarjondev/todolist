@@ -90,3 +90,7 @@ jsAddButton.onmousedown = function() {
 jsAddButton.onmouseup = function() {
 	jsAddButton.classList.remove("add-button-focus")
 }
+
+jsAlertButton.onclick = function() {
+	jsAlert.classList.add("alert-off")
+}

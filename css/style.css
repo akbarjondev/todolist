@@ -33,6 +33,8 @@
 
 /*general styles*/
 body {
+	position: relative;
+	height: 100%;
 	margin: 0;
 	padding: 0;
 	font-family: "Rubik", "Arial", sans-serif;
@@ -54,6 +56,50 @@ body {
 }
 :-moz-placeholder { /* Firefox 18- */
   color: #ffffff;
+}
+.alert {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.alert-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 500px;
+	padding: 30px;
+	font-weight: bold;
+	border-radius: 5px;
+	border: 2px solid #ff9000;
+	background-color: #ffffff;
+}
+.alert-text {
+	line-height: 1.5;
+	text-align: center;
+}
+kbd {
+	padding: 3px;
+	margin: 0 5px;
+	border-radius: 3px;
+	border: 1px solid #ff9000;
+}
+.ok-button {
+	padding: 8px 30px;
+	background-color: #ff9000;
+	border: none;
+	border-radius: 3px;
+	color: #ffffff;
+	cursor: pointer;
+}
+.alert-off {
+	display: none;
 }
 
 /*header*/
