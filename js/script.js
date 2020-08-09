@@ -1,36 +1,6 @@
-jsTask.onkeyup = function(event) {
-	if(event.keyCode === 13 && jsTask.value.length > 0) {
-		const newTasksItem = document.createElement('LI')
-		
-		newTasksItem.classList.add('tasks-item')
-
-		const newTaskText = document.createElement('P')
-		
-		newTaskText.classList.add('task-text')
-		
-		newTaskText.textContent = jsTask.value
-
-		newTasksItem.appendChild(newTaskText)
-
-		const newButton = document.createElement('BUTTON')
-		
-		newButton.classList.add('done-button')
-
-		newButton.onclick = function() {
-			newTasksItem.remove()
-		}
-
-		newTasksItem.appendChild(newButton)
-
-		jsTasks.appendChild(newTasksItem)
-
-		jsTask.value = ''
-	}
-}
-
 const speech = new webkitSpeechRecognition();
 
-speech.lang = 'uz-UZ'
+speech.lang = 'en-US'
 
 speech.onend = function() {
 	console.log('Aloqa tugadi.')
@@ -41,8 +11,82 @@ speech.onerror = function() {
 }
 
 speech.onresult = function(event) {
-	console.log(event.results[0][0].transcript)
+	
+	const order = event.results[0][0].transcript
+	
+	jsTask.value = order
+	
+	jsTask.focus()
+
+	jsTask.onkeyup = function(event) {
+		if(event.keyCode === 13 && jsTask.value.length > 0) {
+			const newTasksItem = document.createElement('LI')
+			
+			newTasksItem.classList.add('tasks-item')
+
+			const newTaskText = document.createElement('P')
+			
+			newTaskText.classList.add('task-text')
+			
+			newTaskText.textContent = jsTask.value
+
+			newTasksItem.appendChild(newTaskText)
+
+			const newButton = document.createElement('BUTTON')
+			
+			newButton.classList.add('done-button')
+
+			newButton.onclick = function() {
+				newTasksItem.remove()
+			}
+
+			newTasksItem.appendChild(newButton)
+
+			jsTasks.appendChild(newTasksItem)
+
+			jsTask.value = ''
+		}
+	}
 }
 
-// console.log(speech)
-speech.start();
+window.onkeyup = function(e) {
+	if(e.shiftKey && e.keyCode == 32) {
+		speech.start();
+	}
+}
+
+jsAddButton.onmousedown = function() {
+	jsAddButton.classList.add("add-button-focus")
+
+	if(jsTask.value.length > 0) {
+			const newTasksItem = document.createElement('LI')
+			
+			newTasksItem.classList.add('tasks-item')
+
+			const newTaskText = document.createElement('P')
+			
+			newTaskText.classList.add('task-text')
+			
+			newTaskText.textContent = jsTask.value
+
+			newTasksItem.appendChild(newTaskText)
+
+			const newButton = document.createElement('BUTTON')
+			
+			newButton.classList.add('done-button')
+
+			newButton.onclick = function() {
+				newTasksItem.remove()
+			}
+
+			newTasksItem.appendChild(newButton)
+
+			jsTasks.appendChild(newTasksItem)
+
+			jsTask.value = ''
+		}
+}
+
+jsAddButton.onmouseup = function() {
+	jsAddButton.classList.remove("add-button-focus")
+}

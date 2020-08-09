@@ -75,11 +75,23 @@ body {
 	border-radius: 3px;
 	overflow: auto;
 }
-.input-img {
-	width: 20px;
-	height: 20px;
+.add-button {
+	padding: 0;
 	margin-left: 10px;
 	margin-right: 10px;
+	background: none;
+	border: none;
+	border-radius: 50%;
+	outline: none;
+	cursor: pointer;
+}
+.add-button-focus {
+	box-shadow: 0 0 0 2px #fff;
+}
+.input-img {
+	display: block;
+	width: 20px;
+	height: 20px;
 }
 .task-input {
 	width: 100%;
