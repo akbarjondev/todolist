@@ -27,3 +27,22 @@ jsTask.onkeyup = function(event) {
 		jsTask.value = ''
 	}
 }
+
+const speech = new webkitSpeechRecognition();
+
+speech.lang = 'uz-UZ'
+
+speech.onend = function() {
+	console.log('Aloqa tugadi.')
+}
+
+speech.onerror = function() {
+	console.log('Xatolik bor.')	
+}
+
+speech.onresult = function(event) {
+	console.log(event.results[0][0].transcript)
+}
+
+// console.log(speech)
+speech.start();
