@@ -11,7 +11,7 @@
 	<div id="jsAlert" class="alert">
 		<div class="alert-box">
 			<p class="alert-text">New Feature! Now, You can add your fancy tasks with speech. To do this press <kbd>Shift</kbd>+<kbd>Space Bar</kbd></p>
-			<button id="jsAlertButton" class="ok-button">OK</button>
+			<button tabindex="0" id="jsAlertButton" class="ok-button">OK</button>
 		</div>
 	</div>
 	<header class="header">
@@ -24,17 +24,20 @@
 					type="text"
 					id="jsTask"
 					class="task-input"
-					placeholder="Add task"
+					placeholder="Write here"
 					autocomplete="off"
 					spellcheck="false"
 				>
+				<div class="kbd-wrapper">
+					<kbd>Shift</kbd>+<kbd>Space Bar</kbd>
+				</div>
 			</div><!-- End of input-wrapper -->
 		</div><!-- End of container -->
 	</header><!-- End of header -->
 	<main class="main">
 		<div class="container">
 			<section class="all-tasks">
-				<h3 class="tasks-heading">All Tasks</h3>
+				<h3 id="jsTasksHeading" class="tasks-heading">Your Tasks <span id="jsGone" class="gone">are gone</span></h3>
 				<ul id="jsTasks" class="tasks-list"></ul>
 			</section>
 		</div>

@@ -16,6 +16,7 @@
 	url("../fonts/rubik-v9-latin_cyrillic-500.woff") format("woff");
 }
 @font-face {
+	font-display: swap;
 	font-family: 'Rubik';
 	font-style: italic;
 	font-weight: 500;
@@ -45,16 +46,16 @@ body {
 *::after {
 	box-sizing: inherit;
 }
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+::-webkit-input-placeholder {
   color: #ffffff;
 }
-::-moz-placeholder { /* Firefox 19+ */
+::-moz-placeholder {
   color: #ffffff;
 }
-:-ms-input-placeholder { /* IE 10+ */
+:-ms-input-placeholder {
   color: #ffffff;
 }
-:-moz-placeholder { /* Firefox 18- */
+:-moz-placeholder {
   color: #ffffff;
 }
 .alert {
@@ -67,15 +68,17 @@ body {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	z-index: 100;
+  padding: 0 30px;
 	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 100;
 }
 .alert-box {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 500px;
-	padding: 30px;
+	max-width: 500px;
+	width: 100%;
+  padding: 30px;
 	font-weight: bold;
 	border-radius: 5px;
 	border: 2px solid #ff9000;
@@ -90,6 +93,7 @@ kbd {
 	margin: 0 5px;
 	border-radius: 3px;
 	border: 1px solid #ff9000;
+	white-space: nowrap;
 }
 .ok-button {
 	padding: 8px 30px;
@@ -102,9 +106,19 @@ kbd {
 .alert-off {
 	display: none;
 }
+.gone {
+  color: #ff9000;
+}
+.gone-off {
+  display: none;
+}
 
 /*header*/
 .header {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 50;
 	padding: 15px 0;
 	color: #ffffff;
 	background-color: #ff9000;
@@ -117,6 +131,7 @@ kbd {
 }
 .input-wrapper {
 	display: flex;
+	justify-content: space-evenly;
 	align-items: center;
 	background-color: #ffa633;
 	border-radius: 3px;
@@ -132,6 +147,10 @@ kbd {
 	outline: none;
 	cursor: pointer;
 }
+  .add-button:hover,
+  .add-button:focus {
+    box-shadow: 0 0 0 2px #fff;
+  }
 .add-button-focus {
 	box-shadow: 0 0 0 2px #fff;
 }
@@ -141,7 +160,7 @@ kbd {
 	height: 20px;
 }
 .task-input {
-	width: 100%;
+	width: 80%;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	padding-left: 5px;
@@ -168,10 +187,22 @@ kbd {
 		height: 20px;
 		background-color: #ccc;
 	}
+.kbd-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.input-wrapper kbd {
+	color: #ff9000;
+	background-color: #ffffff;
+	border: none;
+}
+/*main*/
 .main {
 	padding-top: 40px;
 }
 .all-tasks {
+  margin-top: 55px;
 	color: #333333;
 }
 .tasks-heading {
