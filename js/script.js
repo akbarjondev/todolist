@@ -94,3 +94,27 @@ jsAddButton.onmouseup = function() {
 jsAlertButton.onclick = function() {
 	jsAlert.classList.add("alert-off")
 }
+
+
+
+
+const rec = new webkitSpeechRecognition
+
+rec.lang='uz-UZ'
+
+rec.onresult = function (event) {
+  const command = event.results[0][0].transcript
+  console.log(command)
+}
+
+rec.onend = function () {
+  console.log('Tugadi')
+}
+
+rec.onerror = function() {
+  console.log('Xatolik')
+}
+
+addButton.onclick = function () {
+  rec.start()
+}
